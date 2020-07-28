@@ -1,1 +1,0 @@
-module.exports = './chromium/chrome-win/chrome.exe'; //Can change to google chrome exec path instead.
