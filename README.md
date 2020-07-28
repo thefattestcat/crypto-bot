@@ -2,11 +2,13 @@
 <a href="https://easycrypto.ai/">easycrypto.ai</a> spread trading bot via puppeteer-core 
 
 # Installation
-## Requires manual download of ``chromium``
+## Prerequisites
+### Requires ``Node.js`` and ``npm`` installed. Install both <a href="https://www.npmjs.com/get-npm"><b>here</b></a>
+### Requires manual download of ``chromium``
 Download chromium client from: <a href="https://download-chromium.appspot.com/">``https://download-chromium.appspot.com/``</a> and extract into ``/chromium`` directory.\
 ``chromium.path.js`` points to this directory when extracted.\\
 Alternatively, change ``chromium.path.js`` to Google chrome executable directory to use Chrome.
-## Setup
+### Setup
 After chrommium is installed, run ``npm install`` in project directory to install ``node_modules``.
 
 # Usage
