@@ -4,32 +4,19 @@
 class Pair {
     constructor(symbol, bid, ask) {
         this.symbol = symbol;
-        this.pair = this.splitSymbol(this.symbol);
         this.bid = bid;
         this.ask = ask;
+        this.pair = this.splitSymbol(symbol);
     }
 
     splitSymbol(symbol) {
-        const base = symbol.substring(this.symbol.length - 3, this.symbol.length);
+        const base = symbol.substring(symbol.length - 3, symbol.length);
         const quote = symbol.substring(0, symbol.length - 3);
-        return {base: base, quote: quote};
+        this.base = base;
+        this.quote = quote;
+        return {symbol: this.symbol, base: base, quote: quote, bid: this.bid, ask: this.ask};
     }
-
-    get base() {
-        return this.pair.base;
-    }
-
-    get quote() {
-        return this.pair.quote;
-    }
-
-    get bid() {
-        return this.bid;
-    }
-
-    get ask() {
-        return this.ask;
-    }
+    
 }
 
 class Arbitrage {
