@@ -1,8 +1,14 @@
-/**
- * 
- */
+
 class Pair {
-    constructor(symbol, bid, ask) {
+    /**
+     * @param {string} exchange
+     * @param {*} symbol 
+     * @param {*} bid 
+     * @param {*} ask 
+     * @description asdasdsad
+     */
+    constructor(exchange, symbol, bid, ask) {
+        this.exchange = exchange;
         this.symbol = symbol;
         this.bid = bid;
         this.ask = ask;
@@ -16,10 +22,20 @@ class Pair {
         this.quote = quote;
         return {symbol: this.symbol, base: base, quote: quote, bid: this.bid, ask: this.ask};
     }
+
+    createEndpointListener() {
+        
+    }
     
 }
 
 class Arbitrage {
+    /**
+     * 
+     * @param {*} pair1 
+     * @param {*} pair2 
+     * @param {*} basePair 
+     */
     constructor(pair1, pair2, basePair) {
         this.pair1 = pair1;
         this.pair2 = pair2;
