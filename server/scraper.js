@@ -4,6 +4,7 @@ const chromePath = require('../chromium.path.js')
 const myArgs = process.argv.slice(2);
 
 let url = 'https://easycrypto.ai/nz/rates';
+let url2 = 'https://www.independentreserve.com/api'
 
 (async () => {
     const browser = await puppeteer.launch({

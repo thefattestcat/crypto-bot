@@ -3,11 +3,13 @@ const request = require('request'); //request deprecated, refactor to request-pr
 const tickers = async () => {
     return new Promise((resolve, reject) => {
         const url = 'https://r.easycrypto.nz/pub/tickers';
+        const url2 = 'https://www.independentreserve.com/api' //Read documentation
 
-        request(url, (err, res, body) => {
+        let t = request(url, (err, res, body) => {
             if(err) reject(err);
             console.log('statusCode:', res && res.statusCode);
             resolve(body);
+            
         })
     })
 }

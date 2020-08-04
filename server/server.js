@@ -5,14 +5,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-let symbols = {};
+let symbols = {}; //Refactor this object of symbol strings
 let exchanges = {};
 
 (async () => {
     let getTickers = JSON.parse(await tickers());   
-
     for(let i = 0; i < getTickers.length; i++) {
-        let pair = new Pair('easycrypto', getTickers[i].symbol, getTickers[i].bid, getTickers[i].ask);
+        let pair = new Pair('easycrypto', getTickers[i].symbol, getTickers[i].bid, getTickers[i].ask); //REFACTOR @Exchange parameter
         symbols[pair.symbol] = pair; //push array
         if(typeof exchanges[pair.exchange] === 'undefined') exchanges[pair.exchange] = { pairs : []};
     }
@@ -38,13 +37,18 @@ let exchanges = {};
         res.json({symbols})
     });
 
-    app.get('/api/pair/:pair', (req, res) => {
+    app.get('/api/pairs/:pair', (req, res) => {
         let pair = req.params.pair.toUpperCase();
-        res.json(symbols[pair])
+        res.json(symbols[pair]);
     })
 
     app.get('/api/exchanges', (req, res) => {
-        res.json({exchanges})
+        res.json({exchanges});
+    });
+
+    app.get('/api/exchanges/:exchange', (req, res) => {
+        let exchange = req.params.exchange.toUpperCase()
+        res.json(exchanges[exchange]);
     });
 
     app.get('/', (req, res) => {
@@ -52,8 +56,6 @@ let exchanges = {};
             symbols: symbols,
         })
     })
-
-    
 
     const port = process.env.PORT || 7000;
     const server = app.listen(port, () => {
