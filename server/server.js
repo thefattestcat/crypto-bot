@@ -4,7 +4,7 @@ const {Pair, Arbitrage} = require('./util/spread.exports.js');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-
+// hello this is Jacob
 let symbols = {};
 let exchanges = {};
 
