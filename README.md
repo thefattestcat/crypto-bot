@@ -1,5 +1,9 @@
 # crypto-bot
-<a href="https://easycrypto.ai/">easycrypto.ai</a> spread trading bot via puppeteer-core 
+Inter-exchange arbitrage & spread trading bot\
+
+#### Current exchanges:
+- <b><a href="https://easycrypto.ai/">easycrypto.ai</a></b> | <a href="https://help.easycryp.to/article/34-api">API</a>
+- <b><a href="https://www.independentreserve.com/">independent reserve</a></b>  | <a href="https://www.independentreserve.com/api">API</a>
 
 # Installation
 ## Prerequisites
@@ -12,9 +16,3 @@ Alternatively, change ``chromium.path.js`` to Google chrome executable directory
 After chromium is installed, run ``npm install`` in project directory to install ``node_modules``.
 
 # Usage
-## easycrypto.ai API Documentation
-<a href="https://help.easycryp.to/article/34-api">``https://help.easycryp.to/article/34-api``</a>
-
-
-## Stuff here
-Todo
